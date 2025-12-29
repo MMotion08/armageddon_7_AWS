@@ -73,16 +73,16 @@ Trigger when:
   DB connection errors ≥ 3 in 5 minutes
 
 Alarm Creation (example)
-aws cloudwatch put-metric-alarm \
-  --alarm-name lab-db-connection-failure \
-  --metric-name DBConnectionErrors \
-  --namespace Lab/RDSApp \
-  --statistic Sum \
-  --period 300 \
-  --threshold 3 \
-  --comparison-operator GreaterThanOrEqualToThreshold \
-  --evaluation-periods 1 \
-  --alarm-actions <SNS_TOPIC_ARN>
+        aws cloudwatch put-metric-alarm \
+          --alarm-name lab-db-connection-failure \
+          --metric-name DBConnectionErrors \
+          --namespace Lab/RDSApp \
+          --statistic Sum \
+          --period 300 \
+          --threshold 3 \
+          --comparison-operator GreaterThanOrEqualToThreshold \
+          --evaluation-periods 1 \
+          --alarm-actions <SNS_TOPIC_ARN>
 
 Expected Behavior
   Alarm transitions to ALARM
